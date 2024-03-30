@@ -2,7 +2,7 @@ interface Commands {
   name: string;
   description: string;
 }
-
+// Description des commandes.
 export const commands: Commands[] = [
   {
     name: "ping",
