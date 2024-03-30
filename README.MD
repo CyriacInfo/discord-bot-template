@@ -1,48 +1,50 @@
-# Le E-Loutre Bot
+# E-Loutre Bot
 
-- Description:
-  Pour l'instant ce bot dit juste Feur quand quelqu'un dit "quoi".
+## Description
 
----
+Pour l'instant, ce bot répond "Feur" quand quelqu'un dit "quoi".
 
-# Setup
+## Configuration
 
-- Créer une application sur le site :
-  https://discord.com/developers/applications
+### Création de l'application Discord
 
-Récupérer dans la section information :
-"APPLICATION ID" + "PUBLIC KEY"
+1. Visitez [le portail des développeurs Discord](https://discord.com/developers/applications) et créez une nouvelle application.
+2. Notez l'"APPLICATION ID" et la "PUBLIC KEY" dans la section informations.
+3. Dans la section bot, récupérez le "TOKEN" en cliquant sur "reset token". 
 
-Récupérer dans la section bot :
-"TOKEN"
-Il faut cliquer sur "reset token" et le conserver soigneusement
-!!! ATTENTION !!! Ce token ne sera afficher qu'une seule fois pour des raisons de sécurité. Il faut le conserver sous peine de devoir le régénerer.
+**Conservez ce token soigneusement, car il ne sera affiché qu'une seule fois pour des raisons de sécurité.**
 
-- Générer URL d'invitation du bot :
-  Aller dans la section oauth2 puis cocher
+### Génération de l'URL d'invitation du bot
 
-Scopes :
-applications.commands + bot
+Dans la section OAuth2, cochez les cases suivantes :
 
-Bot Permissions :
-Send Messages + Manage Messages + Read Message History
+- **Scopes**:
+  - `applications.commands`
+  - `bot`
+- **Bot Permissions**:
+  - `Send Messages`
+  - `Manage Messages`
+  - `Read Message History`
 
-## (tout n'est pas utilise pour l'instant mais ça marche lol)
+(Ces permissions ne sont pas toutes utilisées pour l'instant, mais permettent de s'assurer que le bot fonctionne correctement.)
 
-- Remplir le fichier .env
-  1 - Dupliquer le fichier .env.sample
-  2 - Remplir les différentes variables d'environnements
+### Configuration des variables d'environnement
+
+1. Dupliquez le fichier `.env.sample`.
+2. Remplissez les différentes variables d'environnement comme ci-dessous :
 
 ```sh
-APPLICATION_ID="APPLICATION ID"
-PUBLIC_KEY="PUBLIC KEY"
-DISCORD_TOKEN="TOKEN"
-PORT=xxxx
+APPLICATION_ID="Votre APPLICATION ID"
+PUBLIC_KEY="Votre PUBLIC KEY"
+DISCORD_TOKEN="Votre TOKEN"
+PORT=3030 # Port personnalisé pour éviter les conflits avec le port 3000
 ```
 
-## j'avoue, j'utilise le port 3030 pour éviter d'avoir des probleme avec le port 3000
+j'avoue, j'utilise le port 3030 pour éviter d'avoir des probleme avec le port 3000
 
-- Installer les node_modules :
+
+ 
+### Installer les node_modules :
   version de node : v16
 
 ```sh
@@ -51,14 +53,14 @@ npm i
 
 # Démarage :
 
-- Mode développement :
+### Mode développement :
   En gros il y a le hot-reload ici.
 
 ```sh
 npm run dev
 ```
 
-- Mode de production : (à faire)
+### Mode de production : (à faire)
 
 ```sh
 npm start
